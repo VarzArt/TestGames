@@ -10,38 +10,67 @@
   </head>
 
   <body>
-		<section class="simpleBall">
-			<h1 class="simpleBallTitle">Simple ball action with canvas and CSS</h1>
-			<div class="simpleBallExamples">
-				<div class="simpleBallExampleCanvas">
-					<h2 class="simpleBallExampleTitle">Example implemented with canvas:<br> Less stylized but more functional</h2>
-					<canvas id="simpleBallCanvas" width="660" height="700"></canvas>
-				</div>
-				<button id="simpleBallPlay">PLAY</button>
-				<div class="simpleBallExampleCss">
-					<h2 class="simpleBallExampleTitle">Example implemented with Css:<br> Less functional but more stylized</h2>
-					<div class="simpleBallCss">
-						<div class="simpleBallCssBall"></div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section class="arcanoid">
-			<h1 class="arcanoidTitle">Arcanoid Game(Click on area and click Spacebar to start the game)</h1>
-			<div class="arcanoidContent">
-				<canvas id="arcanoidCanvas" width="800" height="450"></canvas>
-	
-				<div class="score"><span>Score:</span><span id="score">0</span></div>
-				<button id="restart">Restart</button>
-		
-				<article class="levels">
-					<span id="easy">Easy</span>
-					<span id="medium">Medium</span>
-					<span id="hard">Hard</span>
-				</article>
-			</div>
-		</section>
-		<script src="simpleBall.js"></script>
+    <section class="simpleBall">
+      <h1 class="simpleBall__title">Simple ball action with canvas and CSS</h1>
+
+      <div class="simpleBall__examples">
+        <div class="simpleBall__example_canvas">
+          <h2 class="simpleBall__example_title">
+            Example implemented with canvas:<br />
+            Less stylized but more functional
+          </h2>
+          <canvas id="simpleBallCanvas" width="660" height="700"></canvas>
+        </div>
+
+        <button id="simpleBallPlay">PLAY</button>
+
+        <div class="simpleBall__example__css">
+          <h2 class="simpleBall__example_title">
+            Example implemented with Css:<br />
+            Less functional but more stylized
+          </h2>
+          <div class="simpleBall__example_css-ball">
+            <div class="simpleBall__example_css-ball-item"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hardBall">
+      <h1 class="hardBall__title">Ball with air resistance</h1>
+
+      <div class="hardBall__example">
+        <canvas id="hardBallCanvas" width="660" height="700"></canvas>
+      </div>
+
+      <div class="hardBall__btns">
+        <button id="hardBallStart">Try this</button>
+        <button id="hardBallRestat">Restart</button>
+      </div>
+    </section>
+
+    <section class="arcanoid">
+      <h1 class="arcanoid__title">
+        Arcanoid Game(Click on area and click Spacebar to start the game)
+      </h1>
+      <div class="arcanoid__content">
+        <canvas id="arcanoidCanvas" width="800" height="450"></canvas>
+
+        <div class="arcanoid__content_score">
+          <span>Score:</span><span id="score">0</span>
+        </div>
+        <button id="restart">Restart</button>
+
+        <article class="arcanoid__content_levels">
+          <span id="easy">Easy</span>
+          <span id="medium">Medium</span>
+          <span id="hard">Hard</span>
+        </article>
+      </div>
+    </section>
+
+    <script src="simpleBall.js"></script>
+    <script src="hardBall.js"></script>
     <script src="arcanoid.js"></script>
   </body>
 </html>

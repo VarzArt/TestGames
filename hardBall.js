@@ -1,23 +1,24 @@
-const simpleBall = {
+const hardBall = {
   width: 660,
   height: 700,
   ballCtx: undefined,
   running: true,
   counter: undefined,
   ball: {
-    x: 360,
+    x: 310,
     y: 150,
     dy: 0,
     height: 38,
+    k: 1,
     velocity: 1,
     start: function () {
       if (!this.dy) {
-        this.dy = this.velocity;
+        this.dy = Math.sqrt(this.velocity);
       }
     },
     move: function () {
       this.y += this.dy;
-      if (this.y % 10 === 0) {
+      if (this.y % 2 === 0) {
         this.dy += this.velocity;
       }
       if (this.dy === 0) {
@@ -33,11 +34,12 @@ const simpleBall = {
       return false;
     },
     bump: function () {
-      this.dy = -11;
+      this.dy = -21 + this.k * Math.sqrt(this.velocity);
+      this.k += 2;
     },
   },
   ground: {
-    x: 130,
+    x: 80,
     y: 540,
     height: 160,
   },
@@ -47,15 +49,16 @@ const simpleBall = {
     ground: undefined,
   },
   init: function () {
-    const simpleBallCanvas = document.getElementById("simpleBallCanvas");
-    this.ballCtx = simpleBallCanvas.getContext("2d");
-    const startBtn = document.getElementById("simpleBallPlay");
-    const cssBall = document.querySelector(
-      ".simpleBall__example_css-ball-item"
-    );
+    const hardBallCanvas = document.getElementById("hardBallCanvas");
+    this.ballCtx = hardBallCanvas.getContext("2d");
+    const startBtn = document.getElementById("hardBallStart");
+    const restartBtn = document.getElementById("hardBallRestat");
+
+    restartBtn.addEventListener("click", () => {
+      window.location.reload();
+    });
 
     startBtn.addEventListener("click", () => {
-      cssBall.classList.add("active");
       this.ball.start();
     });
   },
@@ -80,7 +83,7 @@ const simpleBall = {
   },
   render: function () {
     this.ballCtx.clearRect(0, 0, this.width, this.height);
-    this.ballCtx.drawImage(this.sprites.background, 130, 0);
+    this.ballCtx.drawImage(this.sprites.background, 80, 0);
     this.ballCtx.drawImage(this.sprites.ball, this.ball.x, this.ball.y);
     this.ballCtx.drawImage(this.sprites.ground, this.ground.x, this.ground.y);
   },
@@ -90,10 +93,10 @@ const simpleBall = {
 
     if (this.running) {
       window.requestAnimationFrame(() => {
-        simpleBall.run();
+        hardBall.run();
       });
     }
   },
 };
 
-simpleBall.start();
+hardBall.start();

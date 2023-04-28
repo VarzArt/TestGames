@@ -1,184 +1,232 @@
 body {
   padding: 0;
   margin: 0;
-	background-color: black;
+  background-color: black;
 }
 
 .simpleBall {
-	width: 100%;
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.simpleBallExamples {
-	display: flex;
-	justify-content: space-evenly;
-	width: 100%;
-	height: 90%;
-	align-items: center;
+.simpleBall__examples {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 90%;
+  align-items: center;
 }
 
 #simpleBallPlay {
-	cursor: pointer;
-	padding: 10px;
-	border: 2px solid red;
-	border-radius: 10px;
-	color: white;
-	font-size: 24px;
-	background: transparent;
+  cursor: pointer;
+  padding: 10px;
+  border: 2px solid red;
+  border-radius: 10px;
+  color: white;
+  font-size: 24px;
+  background: transparent;
 }
 
-.simpleBallExampleCanvas,
-.simpleBallExampleCss {
-	width: 40%;
-	height: 100%;
+.simpleBall__example_canvas,
+.simpleBall__example__css {
+  width: 40%;
+  height: 100%;
 }
 
-.simpleBallExampleCss {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+.simpleBall__example__css {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.simpleBallExampleTitle {
-	text-align: center;
-	color: white;
-	font-size: 24px;
-	position: relative;
-	width: 100%;
+.simpleBall__example_title {
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  position: relative;
+  width: 100%;
 }
 
-.simpleBallExampleTitle::after {
-	content: '';
-	height: 2px;
-	background-image: linear-gradient(to left,transparent, red, transparent);
-	position: absolute;
-	width: 100%;
-	bottom: -1vh;
-	left: 0;
+.simpleBall__example_title::after {
+  content: "";
+  height: 2px;
+  background-image: linear-gradient(to left, transparent, red, transparent);
+  position: absolute;
+  width: 100%;
+  bottom: -1vh;
+  left: 0;
 }
 
 #simpleBallCanvas {
-	width: 660px;
-	height: 700px;
+  width: 660px;
+  height: 700px;
 }
 
-.simpleBallCss {
-	background-image: url(/src/simpleBall/images/background.png);
-	width: 500px;
-	height: 700px;
-	position: relative;
+.simpleBall__example_css-ball {
+  background-image: url(/src/simpleBall/images/background.png);
+  width: 500px;
+  height: 700px;
+  position: relative;
 }
 
-.simpleBallCssBall {
-	background: red;
-	border-radius: 100%;
-	width: 38px;
-	height: 38px;
-	position: absolute;
-	left: 230px;
-	top: 150px;
-	border: 1px solid black;
+.simpleBall__example_css-ball-item {
+  background: red;
+  border-radius: 100%;
+  width: 38px;
+  height: 38px;
+  position: absolute;
+  left: 230px;
+  top: 150px;
+  border: 1px solid black;
 }
 
-.simpleBallCssBall.active {
-	animation: bounce 1.5s linear infinite .2s;
+.simpleBall__example_css-ball-item.active {
+  animation: bounce .8s linear infinite 0.2s;
 }
 
 @keyframes bounce {
-	0% {
-		top: 150px;
-		width: 38px;
-		height: 38px;
-	}
-	5% {
-		top: 155px;
-		width: 38px;
-		height: 38px;
-	}
-	10% {
-		top: 170px;
-		width: 38px;
-		height: 38px;
-	}
-	20% {
-		top: 260px;
-		width: 38px;
-		height: 38px;
-	}
-	30% {
-		top: 380px;
-		width: 38px;
-		height: 38px;
-	}
-	40% {
-		top: 510px;
-		width: 38px;
-		height: 38px;
-	}
-	50% {
-		top: 530px;
-		height: 19px;
-		width: 48px;
-	}
-	60% {
-		top: 510px;
-		height: 38px;
-		width: 38px;
-	}
-	70% {
-		top: 380px;
-		width: 38px;
-		height: 38px;
-	}	
-	80% {
-		top: 260px;
-		width: 38px;
-		height: 38px;
-	}	
-	90% {
-		top: 170px;
-		width: 38px;
-		height: 38px;
-	}
-	95% {
-		top: 155px;
-		width: 38px;
-		height: 38px;
-	}
-	100% {
-		top: 150px;
-		width: 38px;
-		height: 38px;
-	}
+  0% {
+    top: 150px;
+    width: 38px;
+    height: 38px;
+  }
+  5% {
+    top: 155px;
+    width: 38px;
+    height: 38px;
+  }
+  10% {
+    top: 170px;
+    width: 38px;
+    height: 38px;
+  }
+  20% {
+    top: 260px;
+    width: 38px;
+    height: 38px;
+  }
+  30% {
+    top: 380px;
+    width: 38px;
+    height: 38px;
+  }
+  40% {
+    top: 510px;
+    width: 38px;
+    height: 38px;
+  }
+  50% {
+    top: 530px;
+    height: 19px;
+    width: 48px;
+  }
+  60% {
+    top: 510px;
+    height: 38px;
+    width: 38px;
+  }
+  70% {
+    top: 380px;
+    width: 38px;
+    height: 38px;
+  }
+  80% {
+    top: 260px;
+    width: 38px;
+    height: 38px;
+  }
+  90% {
+    top: 170px;
+    width: 38px;
+    height: 38px;
+  }
+  95% {
+    top: 155px;
+    width: 38px;
+    height: 38px;
+  }
+  100% {
+    top: 150px;
+    width: 38px;
+    height: 38px;
+  }
+}
+
+.hardBall {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.hardBall__title {
+  color: white;
+  text-shadow: 0 0 30px red;
+  font-size: 36px;
+  position: relative;
+}
+
+.hardBall__title::after {
+  content: "";
+  position: absolute;
+  width: 150%;
+  height: 2px;
+  bottom: -1vh;
+  left: -25%;
+  background-image: linear-gradient(to left, transparent, red, transparent);
+}
+
+.hardBall__example {
+  width: 660px;
+  height: 700px;
+}
+
+.hardBall__btns {
+  display: flex;
+  justify-content: space-evenly;
+  width: 40%;
+}
+
+#hardBallStart,
+#hardBallRestat {
+  background: transparent;
+  color: white;
+  border: 2px solid red;
+  border-radius: 1vw;
+  font-size: 36px;
+  padding: 10px;
+  cursor: pointer;
 }
 
 .arcanoid {
-	width: 100%;
-	height: 110vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-	align-items: center;
+  width: 100%;
+  height: 110vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.arcanoidTitle,
-.simpleBallTitle{
-	color: white;
-	font-size: 36px;
-	text-shadow: 0 0 30px red;
+.arcanoid__title,
+.simpleBall__title {
+  color: white;
+  font-size: 36px;
+  text-shadow: 0 0 30px red;
 }
 
-.arcanoidContent {
-	height: 90vh;
-	width: 90vw;
+.arcanoid__content {
+  height: 90vh;
+  width: 90vw;
   background: url(/src/arcanoid/images/background.png);
   background-size: 100% 100%;
   background-position: center;
-	position: relative;
-	border: 4mm ridge rgba(197, 0, 40, .6);
+  position: relative;
+  border: 4mm ridge rgba(197, 0, 40, 0.6);
 }
 
 #arcanoidCanvas {
@@ -186,7 +234,7 @@ body {
   height: 100%;
 }
 
-.score {
+.arcanoid__content_score {
   position: absolute;
   bottom: 1vh;
   color: white;
@@ -213,7 +261,7 @@ span:last-child {
   cursor: pointer;
 }
 
-.levels {
+.arcanoid__content_levels {
   position: absolute;
   font-size: 36px;
   left: 50%;
@@ -225,7 +273,7 @@ span:last-child {
   font-weight: bold;
   text-shadow: 0 0 2px white;
 }
-.levels > * {
+.arcanoid__content_levels > * {
   cursor: pointer;
 }
 #easy {
