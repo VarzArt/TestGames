@@ -5,17 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aracanoid game</title>
-		<link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <canvas id="arcanoidCanvas" width="800" height="450"></canvas>
-    <div><span>Score:</span><span id="score">0</span></div>
-    <button id="restart">Restart</button>
-    <article class="levels">
-      <span id="easy">Easy</span>
-      <span id="medium">Medium</span>
-      <span id="hard">Hard</span>
-    </article>
+		<section class="simpleBall">
+			<h1 class="simpleBallTitle">Simple ball action with canvas and CSS</h1>
+			<div class="simpleBallExamples">
+				<div class="simpleBallExampleCanvas">
+					<h2 class="simpleBallExampleTitle">Example implemented with canvas:<br> Less stylized but more functional</h2>
+					<canvas id="simpleBallCanvas" width="660" height="700"></canvas>
+				</div>
+				<button id="simpleBallPlay">PLAY</button>
+				<div class="simpleBallExampleCss">
+					<h2 class="simpleBallExampleTitle">Example implemented with Css:<br> Less functional but more stylized</h2>
+					<div class="simpleBallCss">
+						<div class="simpleBallCssBall"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="arcanoid">
+			<h1 class="arcanoidTitle">Arcanoid Game(Click on area and click Spacebar to start the game)</h1>
+			<div class="arcanoidContent">
+				<canvas id="arcanoidCanvas" width="800" height="450"></canvas>
+	
+				<div class="score"><span>Score:</span><span id="score">0</span></div>
+				<button id="restart">Restart</button>
+		
+				<article class="levels">
+					<span id="easy">Easy</span>
+					<span id="medium">Medium</span>
+					<span id="hard">Hard</span>
+				</article>
+			</div>
+		</section>
+		<script src="simpleBall.js"></script>
     <script src="arcanoid.js"></script>
   </body>
 </html>
